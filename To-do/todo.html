@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToDoList</title>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link rel="stylesheet" href="todo.css">
+       
+    </head>
+
+    <body> 
+    <div id="list" style="width:80%;float:left;"></div>
+    <script type="text/babel">
+    class ToDoList extends React.Component{
+      constructor(props) {
+      super(props);
+      this.state= { 
+        tasks:[],
+        input:""
+        }
+    }
+
+  render(){
+  return(
+    <div id="app">
+      <h1>TO-DO List</h1>    
+      <ul id="todolst">
+      {this.state.tasks.map((task,i)=>
+      <li key={i}>
+      {task} {<button id={i} onClick={() => this.deleteTask(i)}> x </button>}
+      </li>
+    )}
+    </ul>
+    <label for= "inpt"> Task </label>
+    <input id ="inpt" onChange={this.updateinpt} value={this.state.input} type="text" placeholder="Enter the task"></input><br/><br/>
+    <button onClick={this.addTask}> Add Task</button>
+    </div>
+  );
+  }
+updateinpt = (event) =>{
+this.setState({
+input: event.target.value
+})
+}
+addTask =() =>{
+this.setState(state=>({
+tasks: [...state.tasks,state.input],
+input:""
+}))                   
+}
+    deleteTask = (id) =>{
+    var lst = this.state.tasks 
+    console.log("exec")
+    console.log(id)
+    console.log(lst)
+    lst.splice(id,1)
+    this.setState({
+    tasks:lst
+    })
+    }
+  }
+  ReactDOM.render(<ToDoList/>,document.querySelector("#list"))
+</script>
+</body>
+</html>

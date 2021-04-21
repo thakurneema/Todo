@@ -1,0 +1,64 @@
+input{
+  padding:5px;
+  margin:5px;
+  font-size:large;
+ }
+
+
+body {
+  background-image: url(3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+h1 {
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  text-shadow: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 50px;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#list {
+  position: relative;
+  top: 35px;
+  left: 150px;
+  width: 180px;
+  height: 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#app {
+  background-color: rgb(221, 150, 185);
+  margin-bottom: 15px;
+  position: relative;
+  left: 50px;
+  width: 34%;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 2px solid lightslategrey;
+  box-shadow: 5px 5px rgb(145, 141, 141);
+  position: absolute;
+  left: 50px;
+  padding: 50px;
+}
+
+/* .todolst {
+  position: relative;
+  top: 35px;
+  left: 150px;
+  width: 180px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: greenyellow;
+  font-weight: bold;
+  cursor: pointer;
+} */
